@@ -158,6 +158,7 @@ class WechatController extends Controller
             return $re['access_token'];
         }
     }
+
     public function curl_post($url, $data)
     {
         $curl = curl_init($url);

@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\testone\WechatController;
+use App\Http\Controllers\testtwo\SignController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,4 +30,11 @@ Route::prefix('wechat')->namespace('testone')->group(function(){
     Route::post('send_message_do','WechatController@send_message_do');      // 标签发送消息
 
     Route::get('get_access_token','WechatController@get_access_token');     // 获取token
+});
+
+
+Route::prefix('sign')->namespace('testtwo')->group(function(){
+    Route::get('create_menu','SignController@create_menu');
+    Route::post('save_menu','SignController@save_menu');
+    Route::get('menu','SignController@menu');
 });
